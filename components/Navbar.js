@@ -11,7 +11,10 @@ const Navbar = async () => {
   return (
     <header className="bg-black/80 px-5 py-3 shadow-sm font-work-sans">
       <nav className="flex items-center justify-between">
-        <Link href={"/"} className="object-fit w-20 h-20 flex rounded-full">
+        <Link
+          href={"/"}
+          className="object-fit w-20 h-20 flex rounded-full border-[1px] p-1"
+        >
           <Image
             src="/logo.png"
             alt="my-logo"
@@ -20,7 +23,7 @@ const Navbar = async () => {
             className="rounded-full"
           />
         </Link>
-        <div className="flex items-center gap-5 text-white">
+        <div className="flex items-center gap-5 text-white xs:text-xs sm:text-sm md:text-base">
           {session && session.user ? (
             <>
               <Link href="/startup/create">
