@@ -30,4 +30,13 @@
   .sub-heading {
     @apply font-medium text-center text-[20px] text-white max-w-2xl break-words;
   }
+  .search-form {
+    @apply rounded-[80px] bg-white border-[5px] w-full max-w-3xl min-h-[80px] border-black text-[24px] mt-8 px-5 items-center flex flex-row gap-5;
+  }
+  .search-input {
+    @apply font-bold  placeholder:text-[20px] placeholder:font-semibold placeholder:text-black-100 w-full outline-none h-auto;
+  }
+  .search-btn {
+    @apply bg-black size-[50px] rounded-full flex text-white items-center justify-center !important;
+  }
 }
