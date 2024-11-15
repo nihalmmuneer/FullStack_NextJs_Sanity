@@ -40,13 +40,13 @@
     @apply bg-black size-[50px] rounded-full flex text-white items-center justify-center !important;
   }
   .section_container {
-    @apply px-6 py-10 max-w-7xl mx-auto
+    @apply px-6 py-10 max-w-7xl mx-auto bg-gray-100
   }
   .card_grid {
     @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5 mt-5;
   }
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5  rounded-xl shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100;
+    @apply   border-black border-[1px] py-6 px-5  rounded-xl shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100;
   }
   .startup-card_date {
     @apply font-medium text-[16px]  bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100 transition-all duration-500;
@@ -55,7 +55,7 @@
     @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
   }
   .startup-card_img {
-    @apply w-full h-[164px] md:h-[350px] object-cover flex bg-red-500  rounded-[10px];
+    @apply w-full h-[164px] md:h-[350px] object-cover flex   rounded-[10px];
   }
   .startup-card_btn {
     @apply rounded-full bg-black-200 text-white px-5 py-3 text-[16px] font-medium !important;
