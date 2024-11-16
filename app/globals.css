@@ -10,7 +10,7 @@
 
 @layer utilities {
   .pink_container {
-    @apply bg-primary max-h-[530px] pattern flex justify-center flex-col items-center px-6 py-10 w-full;
+    @apply bg-primary shadow-sm max-h-[530px] pattern flex justify-center flex-col items-center px-6 py-10 w-full;
   }
   .pattern {
     background-image: linear-gradient(
@@ -43,13 +43,13 @@
     @apply px-6 py-10 max-w-7xl mx-auto bg-gray-100
   }
   .card_grid {
-    @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5 mt-5;
+    @apply grid md:grid-cols-3  xs:grid-cols-1 sm:grid-cols-2 gap-5 mt-5;
   }
   .startup-card {
-    @apply   border-black border-[1px] py-6 px-5  rounded-xl shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100;
+    @apply   border-black border-[5px] py-6 px-5  rounded-xl shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100;
   }
   .startup-card_date {
-    @apply font-medium text-[16px]  bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100 transition-all duration-500;
+    @apply font-medium text-[16px]  py-2 rounded-full  transition-all duration-500;
   }
   .startup-card_desc {
     @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;

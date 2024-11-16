@@ -36,7 +36,7 @@ export default {
     },
     {
       name: 'image',
-      type: 'file',
+      type: 'image',
       validation: (Rule) => Rule.required(),
     },
     {

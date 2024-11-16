@@ -4,6 +4,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { urlFor } from "@/studio-fullstack_sanity_nextjs/lib/client";
 
 const StartupCard = ({ post }) => {
   const {
@@ -16,6 +17,8 @@ const StartupCard = ({ post }) => {
     image,
     category,
   } = post;
+  const imageUrl = urlFor(image).url();
+  console.log(image, "post");
   return (
     <li className="startup-card group">
       <div className="flex justify-between items-center">
@@ -28,7 +31,7 @@ const StartupCard = ({ post }) => {
       <div className="flex justify-between items-center gap-5">
         <div className="flex flex-col mt-5">
           <Link href={`/user/${author_id}`}>
-            <p className="text-[16px] font-medium line-clamp-1">{name}</p>
+            <p className="text-[14px] font-medium line-clamp-1">{name}</p>
           </Link>
           <Link href={`/startup/${_id}`}>
             <h3 className="text-[26px] font-bold line-clamp-1">{title}</h3>
@@ -45,9 +48,9 @@ const StartupCard = ({ post }) => {
         </Link>
       </div>
       <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc">{description}</p>
+        <p className="startup-card_desc md:tracking-wide break-words whitespace-normal">{description}</p>
         <img
-          src="/robot-img.jpg"
+          src={imageUrl}
           alt="img"
           className="startup-card_img"
           width={200}

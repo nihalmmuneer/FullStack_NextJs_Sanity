@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'image',
-      type: 'file',
+      type: 'image',
     },
     {
       name: 'bio',

@@ -1,25 +1,29 @@
 import SearchForm from "@/components/SearchForm";
 import StartupCard from "@/components/StartupCard";
-import Image from "next/image";
+import { client } from "@/studio-fullstack_sanity_nextjs/lib/client";
+import { startUpQueries } from "@/studio-fullstack_sanity_nextjs/lib/queries";
 
 export default async function Home({ searchParams }) {
-  const query = (await searchParams?.query) || "";
+  const query =  searchParams?.query || "";
+  const params = { search: query || null };
+  const posts = await client.fetch(startUpQueries, params);
+  console.log(posts, "fetched Posts");
 
-  const posts = [
-    {
-      _createdAt: new Date(),
-      views: 55,
-      author: {
-        _id: 1,
-        name: "Nihal",
-      },
-      _id: 1,
-      description: "This is a description",
-      image: "https://stock.adobe.com/search?k=robot&asset_id=210969565",
-      category: "Robots",
-      title: "We Robots",
-    },
-  ];
+  // const posts = [
+  //   {
+  //     _createdAt: new Date(),
+  //     views: 55,
+  //     author: {
+  //       _id: 1,
+  //       name: "Nihal",
+  //     },
+  //     _id: 1,
+  //     description: "This is a description",
+  //     image: "https://stock.adobe.com/search?k=robot&asset_id=210969565",
+  //     category: "Robots",
+  //     title: "We Robots",
+  //   },
+  // ];
   return (
     <>
       <section className="pink_container">
@@ -36,10 +40,12 @@ export default async function Home({ searchParams }) {
         {/* </div> */}
       </section>
       <section className="section_container">
-        <p className="text-3xl font-bold">{query ? `Search results for ${query}` : "All Startups"}</p>
+        <p className="text-3xl font-bold">
+          {query ? `Search results for ${query}` : "All Startups"}
+        </p>
         <ul className="card_grid">
-          {posts.length > 0 &&
-            posts.map((post) => <StartupCard key={post._id} post={post} />)}
+          {posts?.length > 0 &&
+            posts.map((post) => <StartupCard key={post?._id} post={post} />)}
         </ul>
       </section>
     </>
